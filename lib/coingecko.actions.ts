@@ -18,6 +18,8 @@ export async function fetcher<T>(
         query: params,
     }, { skipEmptyString: true, skipNull: true });
 
+    console.log("fetcher", url);
+
     const response = await fetch(url, {
         headers: {
             "x-cg-demo-api-key": API_KEY,
