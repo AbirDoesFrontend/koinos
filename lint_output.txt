@@ -1,0 +1,134 @@
+$ eslint
+
+/Applications/Developer/2026/crypto-project/components/CandleSticksChart.tsx
+  15:21  warning  'setLoading' is assigned a value but never used                                                                             @typescript-eslint/no-unused-vars
+  18:12  warning  'isPending' is assigned a value but never used                                                                              @typescript-eslint/no-unused-vars
+  22:27  warning  'interval' is assigned a value but never used                                                                               @typescript-eslint/no-unused-vars
+  76:8   warning  React Hook useEffect has missing dependencies: 'ohlcData' and 'period'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx
+  23:13  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:23:13
+  21 |
+  22 |         return (
+> 23 |             <div id={"coin-overview"}>
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 24 |                 <CandleSticksChart data={coinOHLCData} coinId={"bitcoin"} liveInterval={"1s"}
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |                                    setLiveInterval={function (interval: "1s" | "1m"): void {
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |                 </CandleSticksChart>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 36 |             </div>
+     | ^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  37 |         )
+  38 |
+  39 |     } catch (error){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/error-boundaries
+  24:17  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:24:17
+  22 |         return (
+  23 |             <div id={"coin-overview"}>
+> 24 |                 <CandleSticksChart data={coinOHLCData} coinId={"bitcoin"} liveInterval={"1s"}
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |                                    setLiveInterval={function (interval: "1s" | "1m"): void {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 26 |                                        throw new Error("Function not implemented.");
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |                     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |                 </CandleSticksChart>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  36 |             </div>
+  37 |         )
+  38 |                                                                                                                                                                                                                                                                                                                                                                           react-hooks/error-boundaries
+  25:63  warning  'interval' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+  28:21  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:28:21
+  26 |                                        throw new Error("Function not implemented.");
+  27 |                                    }}>
+> 28 |                     <div className={"header pt-2"}>
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |                         <Image src={coin.image.large} alt={coin.name} width={56} height={56} />
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |                         <div className={"info"}>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |                             <p>{coin.name} / {coin.symbol.toUpperCase()}</p>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |                             <h1>{formatCurrency(coin.market_data.current_price.usd)}</h1>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |                         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |                     </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  35 |                 </CandleSticksChart>
+  36 |             </div>
+  37 |         )  react-hooks/error-boundaries
+  29:25  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:29:25
+  27 |                                    }}>
+  28 |                     <div className={"header pt-2"}>
+> 29 |                         <Image src={coin.image.large} alt={coin.name} width={56} height={56} />
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  30 |                         <div className={"info"}>
+  31 |                             <p>{coin.name} / {coin.symbol.toUpperCase()}</p>
+  32 |                             <h1>{formatCurrency(coin.market_data.current_price.usd)}</h1>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/error-boundaries
+  30:25  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:30:25
+  28 |                     <div className={"header pt-2"}>
+  29 |                         <Image src={coin.image.large} alt={coin.name} width={56} height={56} />
+> 30 |                         <div className={"info"}>
+     |                         ^^^^^^^^^^^^^^^^^^^^^^^^
+> 31 |                             <p>{coin.name} / {coin.symbol.toUpperCase()}</p>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 32 |                             <h1>{formatCurrency(coin.market_data.current_price.usd)}</h1>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 33 |                         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  34 |                     </div>
+  35 |                 </CandleSticksChart>
+  36 |             </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/error-boundaries
+  31:29  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:31:29
+  29 |                         <Image src={coin.image.large} alt={coin.name} width={56} height={56} />
+  30 |                         <div className={"info"}>
+> 31 |                             <p>{coin.name} / {coin.symbol.toUpperCase()}</p>
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  32 |                             <h1>{formatCurrency(coin.market_data.current_price.usd)}</h1>
+  33 |                         </div>
+  34 |                     </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react-hooks/error-boundaries
+  32:29  error    Error: Avoid constructing JSX within try/catch
+
+React does not immediately render components when JSX is rendered, so any errors from this component will not be caught by the try/catch. To catch errors in rendering a given component, wrap that component in an error boundary. (https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).
+
+/Applications/Developer/2026/crypto-project/components/home/CoinOverview.tsx:32:29
+  30 |                         <div className={"info"}>
+  31 |                             <p>{coin.name} / {coin.symbol.toUpperCase()}</p>
+> 32 |                             <h1>{formatCurrency(coin.market_data.current_price.usd)}</h1>
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Avoid constructing JSX within try/catch
+  33 |                         </div>
+  34 |                     </div>
+  35 |                 </CandleSticksChart>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/error-boundaries
+
+✖ 12 problems (7 errors, 5 warnings)
+
+error: script "lint" exited with code 1
