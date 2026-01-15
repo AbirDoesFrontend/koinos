@@ -1,39 +1,44 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 import Link from "next/link";
-import {cn} from "@/lib/utils";
-import {usePathname} from "next/navigation";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
 
-    const pathname = usePathname();
+  return (
+    <header>
+      <div className={"main-container inner"}>
+        <Link href={"/"}>
+          <h2>Kronos</h2>
+        </Link>
 
-    return (
-        <header>
-            <div className={"main-container inner"}>
-                <Link href={"/"}>
-                    <h2>Kronos</h2>
-                </Link>
+        <nav>
+          <Link
+            href={"/"}
+            className={cn("nav-link", {
+              "is-active": pathname === "/",
+              "is-home": true,
+            })}
+          >
+            Home
+          </Link>
 
-                <nav>
-                   <Link href={"/"} className={cn('nav-link', {
-                       'is-active': pathname === '/',
-                       'is-home': true
-                   })}>
-                       Home
-                   </Link>
+          <p>Search Modal</p>
 
-                    <p>Search Modal</p>
-
-                    <Link href={'/coins'} className={cn('nav-link', {
-                        'is-active': pathname === '/coins',
-                    })}>
-                        All Coins
-                    </Link>
-                </nav>
-            </div>
-        </header>
-    )
-}
-export default Header
+          <Link
+            href={"/coins"}
+            className={cn("nav-link", {
+              "is-active": pathname === "/coins",
+            })}
+          >
+            All Coins
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
+};
+export default Header;

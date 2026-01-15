@@ -21,7 +21,7 @@ const Home = async () => {
       </section>
 
       <section className={"w-full mt-7 space-y-4"}>
-          <Categories />
+        <Categories />
       </section>
     </main>
   );
